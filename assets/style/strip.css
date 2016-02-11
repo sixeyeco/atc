@@ -29,12 +29,13 @@
 
   transform: scale(1, 1.3);
 
-  -webkit-box-shadow: outset 0px 0px 10px 0px rgba(255,255,201,1);
-  -moz-box-shadow: outset 0px 0px 10px 0px rgba(255,255,201,1);
-  box-shadow: outset 0px 0px 10px 0px rgba(255,255,201,1);
+  -webkit-box-shadow: inset 0px 0px 6px 0px rgba(43,255,0,1);
+  -moz-box-shadow: inset 0px 0px 6px 0px rgba(43,255,0,1);
+  box-shadow: inset 0px 0px 6px 0px rgba(43,255,0,1);
+  cursor: pointer;
  
-   margin-left: 2px;
-   margin-right: -2px; 
+/*   margin-left: 2px;
+   margin-right: -2px; */
   
   
 }
