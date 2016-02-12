@@ -26,8 +26,8 @@
 
 .strip.departure {
   border-color: rgba(128, 255, 255, 0.8);
-+  border-top-color: rgba(128, 255, 255, 0.05);
-+  border-bottom-color: rgba(128, 255, 255, 0.05);
+  border-top-color: rgba(128, 255, 255, 0.05);
+  border-bottom-color: rgba(128, 255, 255, 0.05);
 }
 
 .strip .aircraft {
