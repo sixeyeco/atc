@@ -5,8 +5,8 @@
 
   border-left: 4px solid transparent; 
   border-right: 4px solid transparent; 
-+  border-top: 1px solid transparent; 
-+  border-bottom: 1px solid transparent; 
+  border-top: 1px solid transparent; 
+  border-bottom: 1px solid transparent; 
 
   list-style-type: none;
   position: relative;
@@ -20,8 +20,8 @@
 
 .strip.arrival {
   border-color: rgba(224, 128, 128, 0.8);
-+  border-top-color: rgba(224, 128, 128, 0.1);
-+  border-bottom-color: rgba(224, 128, 128, 0.1);
+  border-top-color: rgba(224, 128, 128, 0.1);
+  border-bottom-color: rgba(224, 128, 128, 0.1);
 }
 
 .strip.departure {
