@@ -1,12 +1,11 @@
 
 .strip {
   background-color: rgba(255, 255, 255, 0.0);
-  border-width: 0px 4px 0px 4px;
 
-  border-left: 4px solid transparent; 
-  border-right: 4px solid transparent; 
-  border-top: 1px solid transparent; 
-  border-bottom: 1px solid transparent; 
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 
   list-style-type: none;
   position: relative;
@@ -25,7 +24,9 @@
 
 .strip.active {
   background-color: rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 1px 7px rgba(0, 0, 0, 1);
+
   margin-left: -5px;
   margin-right: 5px;
 }
@@ -38,8 +39,8 @@
 
 .strip.departure {
   border-color: rgba(128, 255, 255, 0.8);
-  border-top-color: rgba(128, 255, 255, 0.05);
-  border-bottom-color: rgba(128, 255, 255, 0.05);
+  border-top-color: rgba(224, 128, 128, 0.1);
+  border-bottom-color: rgba(224, 128, 128, 0.1);
 }
 
 .strip .aircraft {
