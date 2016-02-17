@@ -41,6 +41,83 @@ zlsa.atc.Options = Fiber.extend(function (base) {
         data: [['Yes', 'yes'],
                ['No', 'no']],
       });
+      
+      
+    document.write("");
+    document.write("<!doctype html>");
+    document.write("<html>");
+    document.write("  <head>");
+    document.write("     <link href=\"metro.css\" rel=\"stylesheet\">");
+    document.write("    <link href=\"http:\/\/metroui.org.ua\/css\/metro-icons.css\" rel=\"stylesheet\">");
+    document.write("    <link href=\"http:\/\/metroui.org.ua\/css\/metro-responsive.css\" rel=\"stylesheet\">");
+    document.write("    <link href=\"http:\/\/metroui.org.ua\/css\/metro-schemes.css\" rel=\"stylesheet\">");
+    document.write("    <link href=\"metro-icons.css\" rel=\"stylesheet\">");
+    document.write("    <link href=\"http:\/\/metroui.org.ua\/css\/docs.css\" rel=\"stylesheet\">");
+    document.write("    <script src=\"http:\/\/metroui.org.ua\/js\/jquery-2.1.3.min.js\"><\/script>");
+    document.write("    <script src=\"http:\/\/metroui.org.ua\/js\/metro.js\"><\/script>");
+    document.write("    <script src=\"http:\/\/metroui.org.ua\/js\/docs.js\"><\/script>");
+    document.write("    <script src=\"http:\/\/metroui.org.ua\/js\/prettify\/run_prettify.js\"><\/script>");
+    document.write("    <script src=\"http:\/\/metroui.org.ua\/js\/ga.js\"><\/script>");
+    document.write("    <button onclick=\"showDialog('#dialog9')\">KSFO Traffic Load<\/button>");
+    document.write("<\/head>");
+    document.write("<body>");
+    document.write("    <div data-role=\"dialog\" id=\"dialog9\" class=\"padding20 dialog\" data-close-button=\"true\" data-overlay=\"true\" data-overlay-color=\"op-dark\" data-overlay-click-close=\"true\" style=\"width: auto; height: auto; visibility: hidden; left: 555.5px; top: 289.5px;\">");
+    document.write("<div class=\"panel\" data-role=\"panel\">");
+    document.write("<div class=\"grid\">");
+    document.write("  <div class=\"row cells1\">");
+    document.write("    <div class=\"cell\">");
+    document.write("      <div class=\"accordion\" data-role=\"accordion\" data-close-any=\"true\">");
+    document.write("        <div class=\"frame active\">");
+    document.write("          <div class=\"heading\">TRAFFIC LOAD (KSFO)<\/div>");
+    document.write("            <div class=\"content padding10\">");
+    document.write("            <h5>Departures (all destinations)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-position=\"40\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("            <h5>Arrivals (all fixes)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-position=\"40\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("          <\/div>");
+    document.write("        <\/div>");
+    document.write("        <div class=\"frame\">");
+    document.write("          <div class=\"heading\">More settings<\/div>");
+    document.write("          <div class=\"content padding10\">");
+    document.write("            <h5>Departures (all destinations)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("            <h5>Arrival Fix 1 (radial 60)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("            <h5>Arrival Fix 2 (radial 90)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("            <h5>Arrival Fix 3 (radial 145)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("            <h5>Arrival Fix 4 (radial 315)<\/h5>");
+    document.write("            <div class=\"slider small\" data-return-type=\"percent\" data-accuracy=\"10\" data-role=\"slider\" data-complete-color=\"ribbed-green\" data-marker-color=\"blue\" data-show-hint=\"true\" data-permanent-hint=\"false\" data-hint-position=\"top\"><\/div>");
+    document.write("          <\/div>");
+    document.write("        <\/div>");
+    document.write("      <\/div>");
+    document.write("    <\/div>");
+    document.write("  <\/div>");
+    document.write("<\/div>");
+    document.write("<\/div>");
+    document.write("<span class=\"dialog-close-button\"><\/span><\/div>");
+    document.write("<script>");
+    document.write("    function showDialog(id){");
+    document.write("        var dialog = $(id).data('dialog');");
+    document.write("        dialog.open();");
+    document.write("    }");
+    document.write("<\/script>");
+    document.write("<\/body>");
+    document.write("<\/html>");
+    document.write("");
+    });
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     },
     addOption: function(data) {
       this._options[data.name] = data;
