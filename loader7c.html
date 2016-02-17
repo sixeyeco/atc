@@ -1,0 +1,67 @@
+
+<html>
+<head lang="en">
+    <link href="metro.css" rel="stylesheet">
+    <link href="http://metroui.org.ua/css/metro-icons.css" rel="stylesheet">
+    <link href="http://metroui.org.ua/css/metro-responsive.css" rel="stylesheet">
+    <link href="http://metroui.org.ua/css/metro-schemes.css" rel="stylesheet">
+    <link href="metro-icons.css" rel="stylesheet">
+
+    <link href="http://metroui.org.ua/css/docs.css" rel="stylesheet">
+
+    <script src="http://metroui.org.ua/js/jquery-2.1.3.min.js"></script>
+    <script src="http://metroui.org.ua/js/metro.js"></script>
+    <script src="http://metroui.org.ua/js/docs.js"></script>
+    <script src="http://metroui.org.ua/js/prettify/run_prettify.js"></script>
+    <script src="http://metroui.org.ua/js/ga.js"></script>
+    <script>
+        function showCharm(id){
+            var  charm = $("#"+id+"-charm").data("charm");
+            if (charm.element.data("opened") === true) {
+                charm.close();
+            } else {
+                charm.open();
+            }
+        }
+    </script>
+</head>
+<div class="panel" data-role="panel">
+<div class="grid">
+  <div class="row cells1">
+    <div class="cell">
+      <div class="accordion" data-role="accordion" data-close-any="true">
+        <div class="frame active">
+          <div class="heading">TRAFFIC LOAD (KSFO)</div>
+            <div class="content padding10">
+            <h5>Departures (all destinations)</h5>
+            <div class="slider small" data-return-type="percent" data-position="40" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+            <h5>Arrivals (all fixes)</h5>
+            <div class="slider small" data-return-type="percent" data-position="40" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+          </div>
+        </div>
+        <div class="frame">
+          <div class="heading">More settings</div>
+          <div class="content padding10">
+            <h5>Departures (all destinations)</h5>
+            <div class="slider small" data-return-type="percent" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+            <h5>Arrival Fix 1 (radial 60)</h5>
+            <div class="slider small" data-return-type="percent" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+            <h5>Arrival Fix 2 (radial 90)</h5>
+            <div class="slider small" data-return-type="percent" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+            <h5>Arrival Fix 3 (radial 145)</h5>
+            <div class="slider small" data-return-type="percent" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+            <h5>Arrival Fix 4 (radial 315)</h5>
+            <div class="slider small" data-return-type="percent" data-accuracy="10" data-role="slider" data-complete-color="ribbed-green" data-marker-color="blue" data-show-hint="true" data-permanent-hint="false" data-hint-position="top"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div data-role="charm" data-position="right" id="right-charm">To ensure these scripts worked I kept all file references intact. I'm certain the code could be trimmed to the minimum necessary to meet our needs.</div>
+    <div class="padding20 align-center">
+        <button class="button" onclick="showCharm('right')">my notes</button>
+    </div>
+</div>
+  
+</div>
+</div>
