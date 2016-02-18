@@ -15,16 +15,6 @@
   </head>
   <body>
 
-    <div id="example" onClick="colorize()">Click on this text to change the background color</div>
-    <script type='text/javascript'>
-    function colorize() {
-    var element = document.getElementById("example");
-    element.style.backgroundColor='#800';
-    element.style.color='white';
-    element.style.textAlign='center';
-    }
-    
-    </script>
     <div id="airport"></div>
     <div id="canvases">
     </div>
@@ -88,5 +78,17 @@
       ga('send', 'pageview');
 
     </script>
+    
+    <div id="example" onClick="colorize()">Click on this text to change the background color</div>
+    <script type='text/javascript'>
+    function colorize() {
+    var element = document.getElementById("example");
+    element.style.backgroundColor='#800';
+    element.style.color='white';
+    element.style.textAlign='center';
+    }
+    
+    </script>
+    
   </body>
 </html>
