@@ -25,11 +25,11 @@ html, body {
 label {
   display: block;
   height: 25px;
-  width: 100px;
+  width: 250px;
   background: #eee;
   text-align: center;
   font: 14px/25px Helvetica, Arial, sans-serif;
-  margin: 20px 0;
+  margin: 20px 100;
   position: fixed;
 }
 
