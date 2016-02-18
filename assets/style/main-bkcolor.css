@@ -41,8 +41,8 @@ label:hover {
 
 input#lightswitch {
    position: absolute;
-   top: -9999px;
-   left: -9999px;
+   top: 75px;
+   left: 75px;
 }
 
 /*Switched Off*/
