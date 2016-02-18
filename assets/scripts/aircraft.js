@@ -659,7 +659,7 @@ var Aircraft=Fiber.extend(function() {
         }
       }
 
-      $("#strips").prepend(this.html);
+      $("#strips").append(this.html);
 
       this.html.click(this, function(e) {
         input_select(e.data.getCallsign());
@@ -1650,7 +1650,7 @@ var Aircraft=Fiber.extend(function() {
     },
     showStrip: function() {
       this.html.detach();
-      $("#strips").prepend(this.html);
+      $("#strips").append(this.html);
       this.html.show(600);
     },
     updateTarget: function() {
@@ -1673,16 +1673,11 @@ var Aircraft=Fiber.extend(function() {
       if(this.fms.currentWaypoint().navmode == "rwy") {
         airport = airport_get();
         runway  = airport.getRunway(this.fms.currentWaypoint().runway);
-
         offset = runway.getOffset(this.position, this.fms.currentWaypoint().runway, true);
-
         offset_angle = vradial(offset);
-        
         this.offset_angle = offset_angle;
-
         this.approachOffset = abs(offset[0]);
         this.approachDistance = offset[1];
-
         angle = runway.getAngle(this.fms.currentWaypoint().runway);
         if (angle > (2*Math.PI)) angle -= 2*Math.PI;
 
@@ -1701,37 +1696,34 @@ var Aircraft=Fiber.extend(function() {
         if ((abs(this.altitude - glideslope_altitude) < glideslope_window)
             && (abs(offset_angle) < radians(10))
             && (offset[1] < ils)) {
-          //plane is on the glide slope
           if(this.mode != "landing") {
             this.mode = "landing";
-            if (!this.projected &&
-                (abs(angle_offset(this.fms.currentWaypoint().heading, angle)) > radians(30)))
-            {
-              ui_log(true,
-                     this.getRadioCallsign() +
-                       " landing intercept vector was greater than 30 degrees");
+            if (!this.projected && (abs(angle_offset(this.fms.currentWaypoint().heading,
+                  radians(parseInt(this.fms.currentWaypoint().runway.substr(0,2))*10))) > radians(30))) {
+              ui_log(true, this.getRadioCallsign() +
+                      " approach course intercept angle was greater than 30 degrees");
               prop.game.score.violation += 1;
             }
             this.updateStrip();
-            this.fms.setCurrent({
-              turn: null,
-              heading: angle,
-            });
             this.target.turn = null;
           }
 
-          // Steer to within 3m of the centerline while at least 200m out
-          if(offset[1] > 0.2 && abs(offset[1]) > 0.003) {
-            this.target.heading = clamp(radians(-30),
-                                        -12 * offset_angle,
-                                        radians(30)) + angle;
-          } else {
-            this.target.heading = angle;
+          // Intercept localizer and glideslope and follow them inbound
+          var angle_diff = angle_offset(angle, this.heading);
+          var turning_time = Math.abs(degrees(angle_diff)) / 3;  // time to turn angle_diff degrees at 3 deg/s
+          var turning_radius = km(this.speed) / 3600 * turning_time;  // dist covered in the turn, km
+          var dist_to_localizer = offset[0]/Math.sin(angle_diff);  // dist from the localizer intercept point, km
+          if(dist_to_localizer <= turning_radius || dist_to_localizer < 0.5) {
+            // Steer to within 3m of the centerline while at least 200m out
+            if(offset[1] > 0.2 && abs(offset[0]) > 0.003 )
+              this.target.heading = clamp(radians(-30), -12 * offset_angle, radians(30)) + angle;
+            else this.target.heading = angle;
+            
+            // Follow the glideslope
+            this.target.altitude = glideslope_altitude;
           }
 
-          var s = this.target.speed;
-
-          this.target.altitude     = glideslope_altitude;
+          // Speed control on final approach
           if(this.fms.currentWaypoint().speed > 0)
             this.fms.setCurrent({start_speed: this.fms.currentWaypoint().speed});
           this.target.speed        = crange(3, offset[1], 10, this.model.speed.landing, this.fms.currentWaypoint().start_speed);
@@ -2205,6 +2197,10 @@ function aircraft_auto_toggle() {
 }
 
 function aircraft_init() {
+	
+  // 1990' AIRCRAFTS
+
+  
   //ATR
   aircraft_load("at43");
   aircraft_load("at72");
@@ -2239,6 +2235,9 @@ function aircraft_init() {
   aircraft_load("a388");
 
   // BOEING
+   aircraft_load("b722");   // 1990' Update
+   aircraft_load("b732");   // 1990' Update
+   
   aircraft_load("b733");
   aircraft_load("b734");
   aircraft_load("b735");
@@ -2247,6 +2246,8 @@ function aircraft_init() {
   aircraft_load("b738");
   aircraft_load("b739");
 
+  aircraft_load("b742");   // 1990' Update
+  aircraft_load("b74s");   // 1990' Update
   aircraft_load("b744");
   aircraft_load("b748");
 
@@ -2279,13 +2280,17 @@ function aircraft_init() {
 
   // DOUGLAS
   aircraft_load("md11");
-	aircraft_load("dc10");
+  aircraft_load("dc10");
+  aircraft_load("dc87");   // 1990' Update
+  aircraft_load("md80");  // 1990' Update
+  aircraft_load("dc93");   // 1990' Update
 
  // FOKKER
 	aircraft_load("f100");
 
 
   // MISC
+   aircraft_load("l101");  // 1990' Update
   aircraft_load("be36");
   aircraft_load("c130");
   aircraft_load("c5");
