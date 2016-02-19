@@ -4,7 +4,9 @@
     <link rel="shortcut icon" href="https://cloud.githubusercontent.com/assets/179496/12625580/3b70c4b8-c4e9-11e5-8685-daa6342881aa.gif" type="image/x-icon">
     <link rel="icon" href="https://cloud.githubusercontent.com/assets/179496/12625580/3b70c4b8-c4e9-11e5-8685-daa6342881aa.gif" type="image/x-icon">
     <title>Air Traffic Control by Jon Ross</title>
-
+    <link rel=”stylesheet” type=”text/css” href=”yourdefaultstyle.css” title=”default” />
+    <link rel=”alternate stylesheet” type=”text/css” href=”youralternatestyle.css” title=”alternate” />
+    <script type="text/javascript" src="/scripts/styleswitcher.js"></script>
     <link rel="stylesheet" href="assets/style/main.css" />
     <script src="assets/scripts/jquery.min.js"></script>
     <script src="assets/scripts/fiber.min.js"></script>
@@ -15,21 +17,10 @@
     <meta content="Play as an air traffic controller and make sure all planes depart and arrive safely." property="og:description"/>
   </head>
   <body>
-    <body bgcolor="#000" text="#fffff" 
-onLoad="if(top.changeAD)top.changeAD()">
-<a name="top"></a>    
-<form name="bgcolorForm">
-<select onChange="if(this.selectedIndex!=0)
-document.bgColor=this.options[this.selectedIndex].value">
-<option value="choose">set background color    
-<option value="FFFFCC">light yellow
-<option value="CCFFFF">light blue
-<option value="CCFFCC">light green
-<option value="CCCCCC">gray
-<option value="FFFFFF">white
-</select></form>    
-    
-    
+
+<a href=”#” onclick=”setActiveStyleSheet(‘default’); return false;”>Default</a>
+<a href=”#” onclick=”setActiveStyleSheet(‘alternate’); return false;”>Dark</a>
+
     <div id="airport"></div>
     <div id="canvases">
     </div>
